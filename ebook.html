@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>eBook | DumiduUddipana</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<header class="navbar">
+
+  <a href="index.html" class="logo">
+
+    <span class="logo-box">DU</span>
+
+    <span>DumiduUddipana</span>
+
+  </a>
+
+
+  <nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="courses.html">Courses</a>
+
+    <a href="ebook.html">eBook</a>
+
+    <a href="login.html">Login</a>
+
+  </nav>
+
+</header>
+
+
+<section class="ebook-page">
+
+  <div class="ebook-cover">
+    📘
+  </div>
+
+
+  <div>
+
+    <div class="eyebrow">
+      FREE EBOOK
+    </div>
+
+    <h1>
+      AI Video Prompt Guide
+    </h1>
+
+    <p>
+      Get our free eBook and discover
+      useful AI video prompting ideas.
+    </p>
+
+
+    <form
+      class="ebook-form"
+      onsubmit="requestEbook(event)">
+
+      <input
+        type="text"
+        id="ebookName"
+        placeholder="Your name"
+        required>
+
+
+      <input
+        type="email"
+        id="ebookEmail"
+        placeholder="Your email address"
+        required>
+
+
+      <button
+        type="submit"
+        class="btn primary">
+
+        Get My Free eBook →
+
+      </button>
+
+    </form>
+
+
+    <p id="ebookMessage"></p>
+
+  </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get a YouTube video title and copy it.">
+  <title>Title & Description Copy | DumiduUddipana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-protected>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-box">DU</span>
+      <span class="logo-name">DumiduUddipana</span>
+    </a>
+
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="ebook.html">eBook</a>
+      <a href="contact.html">Contact</a>
+      <button type="button" class="nav-logout" id="navLogout" style="display:none;">Logout</button>
+    </nav>
+
+    <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <main class="tool-page">
+    <div class="eyebrow">📝 YOUTUBE INFORMATION TOOL</div>
+    <h1>Title & Description Copy</h1>
+    <p>Paste a YouTube link to get the video title and channel name, then copy them.</p>
+
+    <div class="tool-card">
+      <label for="ytUrl">YouTube URL</label>
+      <input type="url" id="ytUrl" placeholder="https://www.youtube.com/watch?v=...">
+      <button type="button" class="btn primary" id="ytBtn">Get Info</button>
+      <p id="ytMsg" style="font-weight:600;font-size:14px;"></p>
+
+      <div id="ytResult" style="display:none; gap:14px;">
+        <div>
+          <label>Title</label>
+          <div class="tool-output" id="ytTitle"></div>
+          <button type="button" class="copy-button" data-copy="#ytTitle" style="margin-top:10px;">📋 Copy Title</button>
+        </div>
+        <div>
+          <label>Channel</label>
+          <div class="tool-output" id="ytChannel"></div>
+        </div>
+        <div id="ytDescWrap" style="display:none;">
+          <label>Description</label>
+          <div class="tool-output" id="ytDesc"></div>
+          <button type="button" class="copy-button" data-copy="#ytDesc" style="margin-top:10px;">📋 Copy Description</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="logo footer-logo">
+        <span class="logo-box">DU</span>
+        <span>DumiduUddipana</span>
+      </a>
+      <p>Practical AI education and creator tools.</p>
+    </div>
+    <div class="copyright">© 2026 DumiduUddipana. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script>
+/* OPTIONAL: paste a YouTube Data API v3 key here to also get the description.
+   Without a key the tool still shows title + channel. */
+var YT_API_KEY = "";
+
+document.getElementById("ytBtn").addEventListener("click", async function () {
+  var msg = document.getElementById("ytMsg");
+  var id = getYouTubeId(document.getElementById("ytUrl").value);
+  var result = document.getElementById("ytResult");
+  result.style.display = "none";
+  document.getElementById("ytDescWrap").style.display = "none";
+
+  if (!id) { msg.textContent = "❌ That doesn't look like a YouTube link."; return; }
+  msg.textContent = "Loading...";
+
+  try {
+    if (YT_API_KEY) {
+      var r = await fetch("https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" + id + "&key=" + YT_API_KEY);
+      var j = await r.json();
+      var sn = j.items && j.items[0] && j.items[0].snippet;
+      if (!sn) throw new Error("not found");
+      document.getElementById("ytTitle").textContent = sn.title;
+      document.getElementById("ytChannel").textContent = sn.channelTitle;
+      document.getElementById("ytDesc").textContent = sn.description;
+      document.getElementById("ytDescWrap").style.display = "block";
+    } else {
+      var r2 = await fetch("https://noembed.com/embed?url=" + encodeURIComponent("https://www.youtube.com/watch?v=" + id));
+      var j2 = await r2.json();
+      if (!j2.title) throw new Error("not found");
+      document.getElementById("ytTitle").textContent = j2.title;
+      document.getElementById("ytChannel").textContent = j2.author_name || "";
+    }
+    msg.textContent = "";
+    result.style.display = "grid";
+  } catch (e) {
+    msg.textContent = "❌ Could not load that video. Check the link and try again.";
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn how to write better prompts for AI image tools.">
+  <title>AI Image Creation | DumiduUddipana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-protected>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-box">DU</span>
+      <span class="logo-name">DumiduUddipana</span>
+    </a>
+
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="ebook.html">eBook</a>
+      <a href="contact.html">Contact</a>
+      <button type="button" class="nav-logout" id="navLogout" style="display:none;">Logout</button>
+    </nav>
+
+    <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <main class="tool-page">
+    <div class="eyebrow">🖼️ AI IMAGE CREATION</div>
+    <h1>AI Image Prompt Mastery</h1>
+    <p>A good image prompt has 5 parts: <strong>subject, style, lighting, camera/lens and quality</strong>. Copy the examples below and change the subject to make them yours.</p>
+
+    <div class="prompt-list">
+
+      <article class="prompt-item">
+        <h3>Cinematic portrait</h3>
+        <p id="imgp1">Ultra-detailed cinematic portrait of a young man in a rain-soaked neon city street at night, shallow depth of field, 85mm lens, soft rim light, teal and orange color grading, 8k, photorealistic.</p>
+        <button type="button" class="copy-button" data-copy="#imgp1">📋 Copy Prompt</button>
+      </article>
+
+      <article class="prompt-item">
+        <h3>Product photo</h3>
+        <p id="imgp2">Professional product photo of a matte black wireless headphone on a marble surface, soft studio lighting, subtle reflection, minimal background, high-end commercial advertising style.</p>
+        <button type="button" class="copy-button" data-copy="#imgp2">📋 Copy Prompt</button>
+      </article>
+
+      <article class="prompt-item">
+        <h3>Fantasy landscape</h3>
+        <p id="imgp3">Epic fantasy landscape with floating islands, waterfalls falling into clouds, golden hour sunlight, volumetric light rays, highly detailed digital painting, wide angle.</p>
+        <button type="button" class="copy-button" data-copy="#imgp3">📋 Copy Prompt</button>
+      </article>
+
+      <article class="prompt-item">
+        <h3>Cute 3D character</h3>
+        <p id="imgp4">Cute 3D cartoon baby panda wearing a tiny yellow raincoat, soft pastel background, Pixar-style rendering, glossy eyes, smooth lighting, high detail.</p>
+        <button type="button" class="copy-button" data-copy="#imgp4">📋 Copy Prompt</button>
+      </article>
+
+      <article class="prompt-item">
+        <h3>YouTube thumbnail background</h3>
+        <p id="imgp5">Bold YouTube thumbnail background, dramatic red and black gradient, light burst in the center, empty space on the left for text, high contrast, 16:9.</p>
+        <button type="button" class="copy-button" data-copy="#imgp5">📋 Copy Prompt</button>
+      </article>
+    </div>
+
+    <div class="tool-card">
+      <h2>Prompt formula</h2>
+      <div class="tool-output">[Subject] + [Action / pose] + [Environment] + [Style] + [Lighting] + [Camera / lens] + [Quality words]</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="logo footer-logo">
+        <span class="logo-box">DU</span>
+        <span>DumiduUddipana</span>
+      </a>
+      <p>Practical AI education and creator tools.</p>
+    </div>
+    <div class="copyright">© 2026 DumiduUddipana. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>

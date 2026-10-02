@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Find content ideas for creators.">
+  <title>Trending Topics | DumiduUddipana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-protected>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-box">DU</span>
+      <span class="logo-name">DumiduUddipana</span>
+    </a>
+
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="ebook.html">eBook</a>
+      <a href="contact.html">Contact</a>
+      <button type="button" class="nav-logout" id="navLogout" style="display:none;">Logout</button>
+    </nav>
+
+    <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <main class="tool-page">
+    <div class="eyebrow">🔥 CONTENT IDEAS</div>
+    <h1>Trending Topics</h1>
+    <p>Pick a category to get video ideas. For live trends, also check <a href="https://www.youtube.com/feed/trending" target="_blank" rel="noopener" style="color:#4f46e5;font-weight:700;">YouTube Trending</a> and Google Trends.</p>
+
+    <div class="tool-card">
+      <div class="chip-list" id="chips"></div>
+      <div class="tool-output" id="ideasOut">👆 Choose a category.</div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="logo footer-logo">
+        <span class="logo-box">DU</span>
+        <span>DumiduUddipana</span>
+      </a>
+      <p>Practical AI education and creator tools.</p>
+    </div>
+    <div class="copyright">© 2026 DumiduUddipana. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script>
+var ideas = {
+  "AI Tools": ["Best free AI video tools this month", "AI image generator comparison", "How to make a full video using only AI", "5 AI tools that save 10 hours a week"],
+  "Make Money": ["Ways students can earn online", "Freelancing for beginners", "Start a faceless YouTube channel", "Sell prompts and digital products"],
+  "Education": ["Study tips that really work", "How to learn English fast", "Free online courses worth taking", "Learn skills in 30 days"],
+  "Tech": ["Phone tips and hidden settings", "Budget laptops worth buying", "Fix common Windows problems", "Best free apps for creators"],
+  "Lifestyle": ["Morning routine for productivity", "Budgeting for young adults", "Healthy habits in 21 days", "Minimal desk setup ideas"]
+};
+var chips = document.getElementById("chips");
+Object.keys(ideas).forEach(function (cat) {
+  var b = document.createElement("button");
+  b.type = "button"; b.className = "chip"; b.textContent = cat;
+  b.addEventListener("click", function () {
+    document.getElementById("ideasOut").textContent = ideas[cat].map(function (x) { return "• " + x; }).join("\n");
+  });
+  chips.appendChild(b);
+});
+</script>
+</body>
+</html>

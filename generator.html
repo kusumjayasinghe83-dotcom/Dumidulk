@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Generate YouTube titles, descriptions and hashtags.">
+  <title>Title, Description & Hashtag Generator | DumiduUddipana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-protected>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-box">DU</span>
+      <span class="logo-name">DumiduUddipana</span>
+    </a>
+
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="ebook.html">eBook</a>
+      <a href="contact.html">Contact</a>
+      <button type="button" class="nav-logout" id="navLogout" style="display:none;">Logout</button>
+    </nav>
+
+    <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <main class="tool-page">
+    <div class="eyebrow">📊 GENERATOR</div>
+    <h1>Title • Description • Hashtag Generator</h1>
+    <p>Type your video topic and get ready-to-use ideas. You can edit them after copying.</p>
+
+    <div class="tool-card">
+      <label for="topic">Video topic</label>
+      <input type="text" id="topic" placeholder="e.g. AI video creation for beginners">
+      <button type="button" class="btn primary" id="genBtn">Generate</button>
+
+      <div id="genResult" style="display:none; display:none; gap:14px;">
+        <div>
+          <label>Titles</label>
+          <div class="tool-output" id="titlesOut"></div>
+          <button type="button" class="copy-button" data-copy="#titlesOut" style="margin-top:10px;">📋 Copy Titles</button>
+        </div>
+        <div>
+          <label>Description</label>
+          <div class="tool-output" id="descOut"></div>
+          <button type="button" class="copy-button" data-copy="#descOut" style="margin-top:10px;">📋 Copy Description</button>
+        </div>
+        <div>
+          <label>Hashtags</label>
+          <div class="tool-output" id="tagsOut"></div>
+          <button type="button" class="copy-button" data-copy="#tagsOut" style="margin-top:10px;">📋 Copy Hashtags</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="logo footer-logo">
+        <span class="logo-box">DU</span>
+        <span>DumiduUddipana</span>
+      </a>
+      <p>Practical AI education and creator tools.</p>
+    </div>
+    <div class="copyright">© 2026 DumiduUddipana. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script>
+document.getElementById("genBtn").addEventListener("click", function () {
+  var t = document.getElementById("topic").value.trim();
+  if (!t) { document.getElementById("topic").focus(); return; }
+  var cap = t.charAt(0).toUpperCase() + t.slice(1);
+  var titles = [
+    cap + " – Complete Beginner Guide",
+    "How to Master " + t + " (Step by Step)",
+    "5 Mistakes to Avoid in " + t,
+    cap + ": Everything You Need to Know in 2026",
+    "I Tried " + t + " – Here's What Happened",
+    "The Easiest Way to Learn " + t
+  ];
+  var desc = "In this video you will learn everything about " + t + ".\n\n" +
+    "✅ What it is and why it matters\n✅ Simple step-by-step method\n✅ Common mistakes to avoid\n\n" +
+    "👍 Like the video if it helped you\n🔔 Subscribe for more practical lessons";
+  var words = t.toLowerCase().split(/[^a-z0-9]+/i).filter(function (w) { return w.length > 2; });
+  var tags = words.map(function (w) { return "#" + w; })
+    .concat(["#" + words.join(""), "#learn", "#tutorial", "#howto", "#youtube", "#creator"]);
+  tags = tags.filter(function (v, i) { return v !== "#" && tags.indexOf(v) === i; }).slice(0, 12);
+
+  document.getElementById("titlesOut").textContent = titles.join("\n");
+  document.getElementById("descOut").textContent   = desc;
+  document.getElementById("tagsOut").textContent   = tags.join(" ");
+  document.getElementById("genResult").style.display = "grid";
+});
+</script>
+</body>
+</html>

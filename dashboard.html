@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="DumiduUddipana Student Dashboard"
+  >
+
+  <title>Dashboard | DumiduUddipana</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+
+<header class="navbar">
+
+  <a
+    href="index.html"
+    class="logo"
+    aria-label="DumiduUddipana Home"
+  >
+
+    <span class="logo-box">
+      DU
+    </span>
+
+    <span class="logo-name">
+      DumiduUddipana
+    </span>
+
+  </a>
+
+
+  <button
+    class="menu-button"
+    id="menuButton"
+    type="button"
+    onclick="toggleMenu()"
+    aria-label="Open navigation menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+
+  <nav
+    id="navMenu"
+    aria-label="Main navigation"
+  >
+
+    <a href="index.html">
+      Home
+    </a>
+
+    <a
+      href="dashboard.html"
+      class="active"
+    >
+      Dashboard
+    </a>
+
+    <a href="ebook.html">
+      Free eBook
+    </a>
+
+    <a href="faq.html">
+      FAQ
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+
+    <!-- LOGOUT -->
+
+    <button
+      type="button"
+      class="menu-logout-button"
+      id="menuLogoutButton"
+    >
+      Logout
+    </button>
+
+  </nav>
+
+</header>
+
+
+
+<!-- =========================================
+     DASHBOARD
+     ========================================= -->
+
+<main class="dashboard">
+
+
+  <!-- =======================================
+       WELCOME
+       ======================================= -->
+
+  <section class="dashboard-welcome">
+
+    <div class="eyebrow">
+      STUDENT DASHBOARD
+    </div>
+
+
+    <h1>
+
+      Welcome,
+
+      <span id="userName">
+        Student
+      </span>
+
+      👋
+
+    </h1>
+
+
+    <p>
+      Choose what you want to learn today.
+    </p>
+
+  </section>
+
+
+
+  <!-- =======================================
+       DASHBOARD CARDS
+       ======================================= -->
+
+  <section class="dashboard-main-cards">
+
+
+    <!-- =====================================
+         01 AI VIDEO
+         ===================================== -->
+
+    <a
+      href="ai-video.html"
+      class="dashboard-main-card"
+    >
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🎬
+        </div>
+
+
+        <h3>
+          AI VIDEO CREATION
+        </h3>
+
+
+        <div class="dashboard-card-subtitle">
+          AI Video Prompt Mastery
+        </div>
+
+
+        <p>
+          Learn how to create better prompts
+          for AI video tools.
+        </p>
+
+      </div>
+
+
+      <div class="dashboard-card-arrow">
+        Start Learning →
+      </div>
+
+    </a>
+
+
+
+    <!-- =====================================
+         02 AI IMAGE
+         ===================================== -->
+
+    <a
+      href="ai-image.html"
+      class="dashboard-main-card"
+    >
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🖼️
+        </div>
+
+
+        <h3>
+          AI IMAGE CREATION
+        </h3>
+
+
+        <div class="dashboard-card-subtitle">
+          AI Image Prompt Mastery
+        </div>
+
+
+        <p>
+          Learn how to create better prompts
+          for AI image tools.
+        </p>
+
+      </div>
+
+
+      <div class="dashboard-card-arrow">
+        Start Learning →
+      </div>
+
+    </a>
+
+
+
+    <!-- =====================================
+         03 OTHER PROMPTS
+         ===================================== -->
+
+    <a
+      href="other-prompts.html"
+      class="dashboard-main-card"
+    >
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          ✨
+        </div>
+
+
+        <h3>
+          OTHER PROMPTS
+        </h3>
+
+
+        <div class="dashboard-card-subtitle">
+          Useful AI Prompts & Resources
+        </div>
+
+
+        <p>
+          Explore useful prompts and
+          creator resources.
+        </p>
+
+      </div>
+
+
+      <div class="dashboard-card-arrow">
+        Explore →
+      </div>
+
+    </a>
+
+
+
+    <!-- =====================================
+         04 THUMBNAIL
+         ===================================== -->
+
+    <a
+      href="thumbnail.html"
+      class="dashboard-main-card"
+    >
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🖼️
+        </div>
+
+
+        <h3>
+          THUMBNAIL DOWNLOADER
+        </h3>
+
+
+        <div class="dashboard-card-subtitle">
+          YouTube Thumbnail Tool
+        </div>
+
+
+        <p>
+          Get YouTube thumbnails quickly
+          from video URLs.
+        </p>
+
+      </div>
+
+
+      <div class="dashboard-card-arrow">
+        Open Tool →
+      </div>
+
+    </a>
+
+
+
+    <!-- =====================================
+         05 TITLE DESCRIPTION
+         ===================================== -->
+
+    <a
+      href="youtube-info.html"
+      class="dashboard-main-card"
+    >
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          📝
+        </div>
+
+
+        <h3>
+          TITLE & DESCRIPTION COPY
+        </h3>
+
+
+        <div class="dashboard-card-subtitle">
+          YouTube Information Tool
+        </div>
+
+
+        <p>
+          Get useful YouTube title and
+          description information.
+        </p>
+
+      </div>
+
+
+      <div class="dashboard-card-arrow">
+        Open Tool →
+      </div>
+
+    </a>
+
+
+
+    <!-- =====================================
+         06 CHATGPT
+         ===================================== -->
+
+    <a
+      href="chatgpt.html"
+      class="dashboard-main-card"
+    >
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🤖
+        </div>
+
+
+        <h3>
+          CHATGPT
+        </h3>
+
+
+        <div class="dashboard-card-subtitle">
+          AI Learning Assistant
+        </div>
+
+
+        <p>
+          Use AI assistance while learning
+          and creating content.
+        </p>
+
+      </div>
+
+
+      <div class="dashboard-card-arrow">
+        Open Chat →
+      </div>
+
+    </a>
+
+
+
+    <!-- =====================================
+         07 GENERATOR
+         ===================================== -->
+
+    <a
+      href="generator.html"
+      class="dashboard-main-card"
+    >
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          📊
+        </div>
+
+
+        <h3>
+          TITLE / DESCRIPTION / HASHTAG
+        </h3>
+
+
+        <div class="dashboard-card-subtitle">
+          YouTube Content Generator
+        </div>
+
+
+        <p>
+          Generate useful titles,
+          descriptions and hashtags.
+        </p>
+
+      </div>
+
+
+      <div class="dashboard-card-arrow">
+        Open Generator →
+      </div>
+
+    </a>
+
+
+
+    <!-- =====================================
+         08 WATCH TIME
+         ===================================== -->
+
+    <a
+      href="watchtime.html"
+      class="dashboard-main-card"
+    >
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🔢
+        </div>
+
+
+        <h3>
+          YOUTUBE WATCH TIME
+        </h3>
+
+
+        <div class="dashboard-card-subtitle">
+          Watch Time Calculator
+        </div>
+
+
+        <p>
+          Calculate YouTube watch time
+          easily.
+        </p>
+
+      </div>
+
+
+      <div class="dashboard-card-arrow">
+        Calculate →
+      </div>
+
+    </a>
+
+
+
+    <!-- =====================================
+         09 TRENDING
+         ===================================== -->
+
+    <a
+      href="trending.html"
+      class="dashboard-main-card"
+    >
+
+      <div>
+
+        <div class="dashboard-card-icon">
+          🔥
+        </div>
+
+
+        <h3>
+          TRENDING TOPICS
+        </h3>
+
+
+        <div class="dashboard-card-subtitle">
+          YouTube Content Ideas
+        </div>
+
+
+        <p>
+          Discover useful topics and
+          content ideas.
+        </p>
+
+      </div>
+
+
+      <div class="dashboard-card-arrow">
+        Explore Trends →
+      </div>
+
+    </a>
+
+
+  </section>
+
+</main>
+
+
+
+<!-- =========================================
+     SUPABASE
+     ========================================= -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+<!-- =========================================
+     MAIN SCRIPT
+     ========================================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

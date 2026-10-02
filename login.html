@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Login to your DumiduUddipana account."
+  >
+
+  <title>Login | DumiduUddipana</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+
+<body class="auth-body">
+
+
+  <!-- ======================================
+       LOGIN PAGE
+       ====================================== -->
+
+  <main class="auth-page">
+
+
+    <!-- BACKGROUND DECORATION -->
+
+    <div class="auth-glow auth-glow-one"></div>
+
+    <div class="auth-glow auth-glow-two"></div>
+
+
+    <!-- ====================================
+         AUTH CARD
+         ==================================== -->
+
+    <section class="auth-box">
+
+
+      <!-- LOGO -->
+
+      <a
+        href="index.html"
+        class="auth-logo"
+      >
+
+        <span class="logo-box">
+          DU
+        </span>
+
+        <span>
+          DumiduUddipana
+        </span>
+
+      </a>
+
+
+      <!-- SMALL LABEL -->
+
+      <div class="auth-eyebrow">
+        WELCOME BACK
+      </div>
+
+
+      <!-- TITLE -->
+
+      <h1>
+        Login to your account
+      </h1>
+
+
+      <p class="auth-description">
+        Continue learning, create better content
+        and build your AI skills.
+      </p>
+
+
+      <!-- ==================================
+           LOGIN FORM
+           ================================== -->
+
+      <form
+        id="loginForm"
+        class="auth-form"
+      >
+
+
+        <!-- EMAIL -->
+
+        <div class="auth-field">
+
+          <label for="loginEmail">
+            Email Address
+          </label>
+
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="Enter your email"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="auth-field">
+
+          <div class="password-label-row">
+
+            <label for="loginPassword">
+              Password
+            </label>
+
+          </div>
+
+          <div class="password-input-wrap">
+
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+
+            <button
+              type="button"
+              class="password-toggle"
+              onclick="togglePassword('loginPassword', this)"
+              aria-label="Show password"
+            >
+              👁
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- LOGIN BUTTON -->
+
+        <button
+          type="submit"
+          class="auth-submit"
+        >
+
+          <span>
+            Login
+          </span>
+
+          <span>
+            →
+          </span>
+
+        </button>
+
+
+      </form>
+
+
+      <!-- ==================================
+           LOGIN MESSAGE
+           ================================== -->
+
+      <div
+        id="loginMessage"
+        class="auth-message"
+        aria-live="polite"
+      ></div>
+
+
+      <!-- ==================================
+           REGISTER
+           ================================== -->
+
+      <div class="auth-switch">
+
+        <span>
+          Don't have an account?
+        </span>
+
+        <a href="register.html">
+          Create Account
+        </a>
+
+      </div>
+
+
+      <!-- ==================================
+           DIVIDER
+           ================================== -->
+
+      <div class="auth-divider">
+
+        <span></span>
+
+        <small>
+          OR
+        </small>
+
+        <span></span>
+
+      </div>
+
+
+      <!-- ==================================
+           HOME BUTTON
+           ================================== -->
+
+      <a
+        href="index.html"
+        class="auth-home"
+      >
+
+        ← Back to Home
+
+      </a>
+
+
+      <!-- ==================================
+           SECURITY NOTE
+           ================================== -->
+
+      <div class="auth-secure">
+
+        🔒
+        <span>
+          Your account is securely protected.
+        </span>
+
+      </div>
+
+
+    </section>
+
+
+  </main>
+
+
+  <!-- ======================================
+       SUPABASE
+       ====================================== -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+
+  <!-- ======================================
+       MAIN JAVASCRIPT
+       ====================================== -->
+
+  <script src="script.js"></script>
+
+
+  <!-- ======================================
+       PASSWORD SHOW / HIDE
+       ====================================== -->
+
+  <script>
+
+    function togglePassword(
+      inputId,
+      button
+    ) {
+
+      const input =
+        document.getElementById(inputId);
+
+      if (!input) return;
+
+
+      if (
+        input.type === "password"
+      ) {
+
+        input.type = "text";
+
+        button.textContent = "🙈";
+
+        button.setAttribute(
+          "aria-label",
+          "Hide password"
+        );
+
+      } else {
+
+        input.type = "password";
+
+        button.textContent = "👁";
+
+        button.setAttribute(
+          "aria-label",
+          "Show password"
+        );
+
+      }
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>

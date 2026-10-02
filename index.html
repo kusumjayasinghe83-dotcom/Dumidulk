@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="DumiduUddipana - Learn AI, create better content and build digital skills."
+  >
+
+  <title>DumiduUddipana</title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+
+  <!-- =====================================
+       HEADER
+       ===================================== -->
+
+  <header class="navbar">
+
+    <a
+      href="index.html"
+      class="logo"
+    >
+
+      <span class="logo-box">
+        DU
+      </span>
+
+      <span class="logo-name">
+        DumiduUddipana
+      </span>
+
+    </a>
+
+
+    <nav id="navMenu">
+
+      <a href="index.html">
+        Home
+      </a>
+
+      <a href="ebook.html">
+        eBook
+      </a>
+
+      <a href="contact.html">
+        Contact
+      </a>
+
+      <!-- LOGIN -->
+      <a
+        href="login.html"
+        class="nav-login"
+        id="navLogin"
+      >
+        Login
+      </a>
+
+      <!-- REGISTER -->
+      <a
+        href="register.html"
+        class="nav-register"
+        id="navRegister"
+      >
+        Register
+      </a>
+
+      <!-- DASHBOARD -->
+      <a
+        href="dashboard.html"
+        class="nav-dashboard"
+        id="navDashboard"
+        style="display:none;"
+      >
+        Dashboard
+      </a>
+
+      <!-- LOGOUT -->
+      <button
+        type="button"
+        class="nav-logout"
+        id="navLogout"
+        style="display:none;"
+      >
+        Logout
+      </button>
+
+    </nav>
+
+
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open menu"
+      onclick="toggleMenu()"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- =====================================
+       HERO
+       ===================================== -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          DUMIDUUDDIPANA
+        </div>
+
+        <h1>
+          Learn AI.
+          <br>
+          <span>Create Without Limits.</span>
+        </h1>
+
+        <p>
+          Learn AI video creation, AI image creation,
+          prompting and modern creator tools
+          through practical lessons.
+        </p>
+
+
+        <div
+          class="hero-buttons"
+          id="heroButtons"
+        >
+
+          <a
+            href="login.html"
+            class="btn primary"
+          >
+            Login
+          </a>
+
+          <a
+            href="register.html"
+            class="btn secondary"
+          >
+            Register
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-visual">
+
+        <div class="floating-card floating-top">
+          🎬 AI Video Creation
+        </div>
+
+        <div class="academy-card">
+
+          <div class="academy-logo">
+            DU
+          </div>
+
+          <div class="mini-label">
+            DUMIDUUDDIPANA
+          </div>
+
+          <h2>
+            Create.
+            <br>
+            Learn.
+            <br>
+            Grow.
+          </h2>
+
+          <div class="academy-line"></div>
+
+          <p>
+            Build your AI skills step by step.
+          </p>
+
+        </div>
+
+        <div class="floating-card floating-bottom">
+          ✨ AI Prompting
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         MAIN TOOLS / CATEGORIES
+         ===================================== -->
+
+    <section class="dashboard-section">
+
+      <div class="section-heading">
+
+        <div class="eyebrow">
+          LEARNING & CREATOR TOOLS
+        </div>
+
+        <h2>
+          Everything you need in one place.
+        </h2>
+
+        <p>
+          Choose a category below and start learning,
+          creating and improving your content.
+        </p>
+
+      </div>
+
+
+      <div class="main-cards">
+
+
+        <!-- 1 AI VIDEO -->
+
+        <a
+          href="ai-video.html"
+          class="main-card protected-card"
+          data-page="ai-video.html"
+        >
+
+          <div class="card-icon video-icon">
+            🎬
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              AI VIDEO CREATION
+            </h3>
+
+            <p class="card-subtitle">
+              AI Video Prompt Mastery
+            </p>
+
+            <p class="card-description">
+              Learn how to create better prompts
+              for AI video tools.
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            Open →
+          </div>
+
+        </a>
+
+
+        <!-- 2 AI IMAGE -->
+
+        <a
+          href="ai-image.html"
+          class="main-card protected-card"
+          data-page="ai-image.html"
+        >
+
+          <div class="card-icon image-icon">
+            🖼️
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              AI IMAGE CREATION
+            </h3>
+
+            <p class="card-subtitle">
+              AI Image Prompt Mastery
+            </p>
+
+            <p class="card-description">
+              Learn how to create better prompts
+              for AI image tools.
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            Open →
+          </div>
+
+        </a>
+
+
+        <!-- 3 OTHER PROMPTS -->
+
+        <a
+          href="other-prompts.html"
+          class="main-card protected-card"
+          data-page="other-prompts.html"
+        >
+
+          <div class="card-icon prompt-icon">
+            ✨
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              OTHER PROMPTS
+            </h3>
+
+            <p class="card-subtitle">
+              Useful AI Prompts
+            </p>
+
+            <p class="card-description">
+              Explore useful prompts for
+              different creative tasks.
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            Open →
+          </div>
+
+        </a>
+
+
+        <!-- 4 THUMBNAIL -->
+
+        <a
+          href="thumbnail.html"
+          class="main-card protected-card"
+          data-page="thumbnail.html"
+        >
+
+          <div class="card-icon thumbnail-icon">
+            🖼️
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              THUMBNAIL DOWNLOADER
+            </h3>
+
+            <p class="card-subtitle">
+              YouTube Thumbnail Tool
+            </p>
+
+            <p class="card-description">
+              Get YouTube thumbnails quickly
+              from video URLs.
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            Open Tool →
+          </div>
+
+        </a>
+
+
+        <!-- 5 TITLE DESCRIPTION -->
+
+        <a
+          href="youtube-info.html"
+          class="main-card protected-card"
+          data-page="youtube-info.html"
+        >
+
+          <div class="card-icon title-icon">
+            📝
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              TITLE & DESCRIPTION COPY
+            </h3>
+
+            <p class="card-subtitle">
+              YouTube Information Tool
+            </p>
+
+            <p class="card-description">
+              Get a video's title and description
+              quickly and copy them.
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            Open Tool →
+          </div>
+
+        </a>
+
+
+        <!-- 6 CHATGPT -->
+
+        <a
+          href="chatgpt.html"
+          class="main-card protected-card"
+          data-page="chatgpt.html"
+        >
+
+          <div class="card-icon chat-icon">
+            🤖
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              CHATGPT
+            </h3>
+
+            <p class="card-subtitle">
+              AI Learning Assistant
+            </p>
+
+            <p class="card-description">
+              Ask questions and get help
+              while learning.
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            Start Chat →
+          </div>
+
+        </a>
+
+
+        <!-- 7 GENERATOR -->
+
+        <a
+          href="generator.html"
+          class="main-card protected-card"
+          data-page="generator.html"
+        >
+
+          <div class="card-icon generator-icon">
+            📊
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              TITLE • DESCRIPTION • HASHTAG
+              GENERATOR
+            </h3>
+
+            <p class="card-subtitle">
+              YouTube Content Generator
+            </p>
+
+            <p class="card-description">
+              Generate useful titles,
+              descriptions and hashtags.
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            Open Tool →
+          </div>
+
+        </a>
+
+
+        <!-- 8 WATCH TIME -->
+
+        <a
+          href="watchtime.html"
+          class="main-card protected-card"
+          data-page="watchtime.html"
+        >
+
+          <div class="card-icon watch-icon">
+            🔢
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              YOUTUBE WATCH TIME
+              CALCULATOR
+            </h3>
+
+            <p class="card-subtitle">
+              Watch Time Calculator
+            </p>
+
+            <p class="card-description">
+              Calculate YouTube watch time
+              using your video statistics.
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            Open Calculator →
+          </div>
+
+        </a>
+
+
+        <!-- 9 TRENDING -->
+
+        <a
+          href="trending.html"
+          class="main-card protected-card"
+          data-page="trending.html"
+        >
+
+          <div class="card-icon trending-icon">
+            🔥
+          </div>
+
+          <div class="card-content">
+
+            <h3>
+              TRENDING TOPICS
+            </h3>
+
+            <p class="card-subtitle">
+              Find Content Ideas
+            </p>
+
+            <p class="card-description">
+              Discover useful topics and
+              content ideas for creators.
+            </p>
+
+          </div>
+
+          <div class="card-arrow">
+            Explore →
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================
+         LOGIN REQUIRED POPUP
+         ===================================== -->
+
+    <div
+      class="login-modal"
+      id="loginModal"
+    >
+
+      <div class="login-modal-box">
+
+        <button
+          type="button"
+          class="modal-close"
+          id="modalClose"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+        <div class="modal-icon">
+          🔐
+        </div>
+
+        <h2>
+          Login Required
+        </h2>
+
+        <p>
+          Please login or create an account
+          to access this content.
+        </p>
+
+        <div class="modal-buttons">
+
+          <a
+            href="login.html"
+            class="btn primary"
+          >
+            Login
+          </a>
+
+          <a
+            href="register.html"
+            class="btn secondary"
+          >
+            Register
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================
+       FOOTER
+       ===================================== -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <a
+        href="index.html"
+        class="logo footer-logo"
+      >
+
+        <span class="logo-box">
+          DU
+        </span>
+
+        <span>
+          DumiduUddipana
+        </span>
+
+      </a>
+
+      <p>
+        Practical AI education and creator tools.
+      </p>
+
+    </div>
+
+
+    <div class="copyright">
+
+      © 2026 DumiduUddipana.
+      All rights reserved.
+
+    </div>
+
+  </footer>
+
+
+  <!-- =====================================
+       SUPABASE
+       ===================================== -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

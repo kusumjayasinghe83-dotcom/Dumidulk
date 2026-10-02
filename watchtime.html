@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Calculate YouTube watch time from your video statistics.">
+  <title>YouTube Watch Time Calculator | DumiduUddipana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-protected>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">
+      <span class="logo-box">DU</span>
+      <span class="logo-name">DumiduUddipana</span>
+    </a>
+
+    <nav id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="ebook.html">eBook</a>
+      <a href="contact.html">Contact</a>
+      <button type="button" class="nav-logout" id="navLogout" style="display:none;">Logout</button>
+    </nav>
+
+    <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+  </header>
+
+  <main class="tool-page">
+    <div class="eyebrow">🔢 CALCULATOR</div>
+    <h1>YouTube Watch Time Calculator</h1>
+    <p>Enter your numbers and see your total watch hours and how far you are from your goal.</p>
+
+    <div class="tool-card">
+      <div class="tool-row">
+        <div>
+          <label for="views">Total views</label>
+          <input type="number" id="views" min="0" placeholder="e.g. 25000">
+        </div>
+        <div>
+          <label for="avgMin">Average view duration (minutes)</label>
+          <input type="number" id="avgMin" min="0" step="0.1" placeholder="e.g. 2.5">
+        </div>
+      </div>
+      <div>
+        <label for="goal">Watch hour goal</label>
+        <input type="number" id="goal" min="1" value="4000">
+      </div>
+      <button type="button" class="btn primary" id="calcBtn">Calculate</button>
+
+      <div id="wtResult" style="display:none;">
+        <div class="stat-grid">
+          <div class="stat"><strong id="hoursOut">0</strong><span>Total watch hours</span></div>
+          <div class="stat"><strong id="percentOut">0%</strong><span>of your goal</span></div>
+          <div class="stat"><strong id="leftOut">0</strong><span>Hours left</span></div>
+        </div>
+        <div class="big-progress"><div class="progress"><div id="wtBar" style="width:0%"></div></div></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <a href="index.html" class="logo footer-logo">
+        <span class="logo-box">DU</span>
+        <span>DumiduUddipana</span>
+      </a>
+      <p>Practical AI education and creator tools.</p>
+    </div>
+    <div class="copyright">© 2026 DumiduUddipana. All rights reserved.</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+  <script>
+document.getElementById("calcBtn").addEventListener("click", function () {
+  var views = parseFloat(document.getElementById("views").value) || 0;
+  var avg   = parseFloat(document.getElementById("avgMin").value) || 0;
+  var goal  = parseFloat(document.getElementById("goal").value) || 4000;
+  var hours = (views * avg) / 60;
+  var pct   = Math.min(100, (hours / goal) * 100);
+  var left  = Math.max(0, goal - hours);
+  document.getElementById("hoursOut").textContent   = hours.toLocaleString(undefined, {maximumFractionDigits: 1});
+  document.getElementById("percentOut").textContent = pct.toFixed(1) + "%";
+  document.getElementById("leftOut").textContent    = left.toLocaleString(undefined, {maximumFractionDigits: 1});
+  document.getElementById("wtBar").style.width      = pct + "%";
+  document.getElementById("wtResult").style.display = "block";
+});
+</script>
+</body>
+</html>

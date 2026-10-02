@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta
+name="description"
+content="Download YouTube video thumbnails with DumiduUddipana.">
+
+<title>
+    YouTube Thumbnail Downloader | DumiduUddipana
+  </title>
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+<body data-protected>
+<!-- ================= HEADER ================= -->
+<header class="navbar">
+
+<a
+href="index.html"
+class="logo">
+<span class="logo-box">
+  DU
+</span>
+<span>
+  DumiduUddipana
+</span>
+  </a>
+  <nav id="navMenu">
+<a href="index.html">
+  Home
+</a>
+<a href="courses.html">
+  Courses
+</a>
+<a href="ebook.html">
+  Free eBook
+</a>
+<a href="contact.html">
+  Contact
+</a>
+<a
+  href="login.html"
+  class="login-button"
+>
+  Login
+</a>
+  </nav>
+
+<button
+class="menu-button"
+onclick="toggleMenu()"
+type="button"
+aria-label="Open menu">
+☰
+  </button>
+</header>
+<!-- ================= TOOL ================= -->
+<section class="thumbnail-tool">
+  <div class="thumbnail-box">
+<div class="eyebrow">
+  DUMIDUUDDIPANA TOOL
+</div>
+<h1>
+  YouTube Thumbnail Downloader
+</h1>
+<p>
+  Paste a YouTube video URL
+  and get its thumbnail.
+</p>
+<!-- ================= FORM ================= -->
+<form
+  id="thumbnailForm"
+>
+  <input
+    type="url"
+    id="youtubeUrl"
+    placeholder="Paste YouTube URL here..."
+    autocomplete="off"
+    required
+  >
+  <button
+    type="submit"
+    class="btn primary"
+  >
+    Get Thumbnail
+  </button>
+</form>
+<!-- ================= MESSAGE ================= -->
+<p
+  id="thumbnailMessage"
+  aria-live="polite"
+></p>
+<!-- ================= RESULT ================= -->
+<div
+  id="thumbnailResult"
+  class="thumbnail-result"
+  style="display: none;"
+>
+  <h2>
+    Thumbnail Preview
+  </h2>
+  <img
+    id="thumbnailImage"
+    src=""
+    alt="YouTube video thumbnail"
+  >
+  <div
+    class="thumbnail-actions"
+  >
+    <!-- OPEN -->
+    <a
+      id="downloadThumbnail"
+      class="btn primary"
+      href=""
+      target="_blank"
+      rel="noopener"
+    >
+      Open Thumbnail
+    </a>
+    <!-- DOWNLOAD -->
+    <a
+      id="saveThumbnail"
+      class="btn secondary"
+      href=""
+      download="youtube-thumbnail.jpg"
+    >
+      Download Thumbnail
+    </a>
+  </div>
+</div>
+  </div>
+</section>
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-content">
+<div>
+  <a
+    href="index.html"
+    class="logo footer-logo"
+  >
+    <span class="logo-box">
+      DU
+    </span>
+    <span>
+      DumiduUddipana
+    </span>
+  </a>
+  <p>
+    Practical AI education for
+    modern creators.
+  </p>
+</div>
+<div class="footer-links">
+  <a href="index.html">
+    Home
+  </a>
+  <a href="courses.html">
+    Courses
+  </a>
+  <a href="ebook.html">
+    Free eBook
+  </a>
+  <a href="contact.html">
+    Contact
+  </a>
+</div>
+  </div>
+  <div class="copyright">
+© 2026 DumiduUddipana.
+All rights reserved.
+  </div>
+</footer>
+<!-- ================= JAVASCRIPT ================= -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script>
+</body>
+</html>
