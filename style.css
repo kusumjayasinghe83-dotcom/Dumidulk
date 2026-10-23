@@ -2211,3 +2211,138 @@ footer {
   color: #4f46e5;
   font-weight: 700;
 }
+
+
+/* =====================================================
+   MY BRANDS (public section)
+   ===================================================== */
+
+.brands-section {
+  max-width: 1250px;
+  margin: auto;
+  padding: 70px 6% 10px;
+  scroll-margin-top: 90px;
+}
+
+.brand-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.other-heading {
+  margin: 45px 0 25px;
+}
+
+.other-heading h2 {
+  font-size: clamp(26px, 4vw, 38px);
+}
+
+.brand-card {
+  padding: 30px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-5px);
+  border-color: #c7d2fe;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.10);
+}
+
+.brand-wide {
+  grid-column: 1 / -1;
+  background: #f8fafc;
+  border-style: dashed;
+}
+
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: #111827;
+  color: white;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.brand-card h3 {
+  font-size: 22px;
+  line-height: 1.25;
+  color: #111827;
+}
+
+.social-links {
+  margin-top: 22px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+
+
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.14);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-pill svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.social-pill:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.22);
+}
+
+.social-pill.youtube   { background: #ff0000; }
+.social-pill.facebook  { background: #1877f2; }
+.social-pill.linkedin  { background: #0a66c2; }
+.social-pill.x         { background: #111827; }
+.social-pill.instagram { background: linear-gradient(45deg, #f09433, #dc2743 50%, #bc1888); }
+.social-pill.tiktok {
+  background: #000;
+  box-shadow: -3px 3px 0 #25f4ee, 3px -3px 0 #fe2c55;
+}
+.social-pill.tiktok:hover {
+  box-shadow: -4px 4px 0 #25f4ee, 4px -4px 0 #fe2c55;
+}
+
+@media (max-width: 700px) {
+  .brand-cards { grid-template-columns: 1fr; }
+  .brand-card { padding: 24px 20px; }
+  .social-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .social-pill {
+    justify-content: center;
+    padding: 13px 10px;
+    min-width: 0;
+  }
+  .social-pill.tiktok {
+    box-shadow: -2px 2px 0 #25f4ee, 2px -2px 0 #fe2c55;
+  }
+  .brands-section { padding-top: 50px; }
+}
